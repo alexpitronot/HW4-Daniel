@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+
+    {% if message %}
+	  <table>
+        <tr><td>First-Name</td><td>Last-Name</td><td>Is_Smoking</td><td>ID</td><td>Birthday</td></tr>
+		<tr><td>{{fname}}</td><td>{{lname}}</td><td>{{smoking}}</td><td>{{id}}</td><td>{{birthday}}</td></tr>
+	  <table>
+    {% else %}
+	  <Table>
+	<form action="" method="post">
+        <tr>
+			<p>
+            	<td><label for="fname">First-Name</label></td>
+            	<td><input type="text" name="fname" value="{{fname}}" placeholder="Your First name"></td>
+        	</p>
+		</tr>
+		<tr>
+			<p>
+				<td><label for="lname">Last-Name</label></td>
+				<td><input type="text" name="lname" value="{{lname}}" placeholder="Your Last name"></td>
+			</p>
+		</tr>
+		<tr>
+			<p>
+				<td><label for="smoking">Is_Smoking</label></td>
+				<td><input type="text" name="smoking" value="{{smoking}}" placeholder="Yes or No"></td>
+			</p>
+		</tr>
+				<tr>
+			<p>
+				<td><label for="id">ID</label></td>
+				<td><input type="text" name="id" value="{{id}}" placeholder="ID number up till 9 digits"></td>
+			</p>
+		</tr>
+		<tr>
+			<p>
+				<td><label for="birthday">Birthday</label></td>
+				<td><input type="date" name="birthday" value="{{birthday}}" placeholder="B-day formar: dd/mm/yyyy"></td>
+			</p>
+		</tr>
+		<tr>
+			<p>
+				<td colspan="2"><input type="Submit"></td>
+			</p>
+		</tr>
+    </form>
+	 </Table>
+	 <div>{{fname}} Welcome to our Class!</div>{% endif %}
+</body>
+</html>
