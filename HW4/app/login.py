@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/", methods=['post', 'get'])
+@app.route('/', methods =["GET", "POST"])
 
 
 def login():
@@ -11,8 +11,8 @@ def login():
     if request.method == 'POST':
         fname = request.form.get('First-Name:')  # access the data inside 
         lname = request.form.get('Last-Name:')
-        smoking = request.formt.get('Is_Smoking:')
-        id = request.formt.get('ID:')
+        smoking = request.form.get('Is_Smoking:')
+        id = request.form.get('ID:')
         birthday = request.form.get('Birthday:')
 
         # validifiction
